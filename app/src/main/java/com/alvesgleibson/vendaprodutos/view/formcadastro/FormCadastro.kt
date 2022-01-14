@@ -8,7 +8,11 @@ import android.text.TextUtils
 
 import com.alvesgleibson.vendaprodutos.databinding.ActivityFormCadastroBinding
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 
 
 class FormCadastro : AppCompatActivity() {
@@ -42,6 +46,23 @@ class FormCadastro : AppCompatActivity() {
 
                     }
 
+
+                }.addOnFailureListener { excepion ->
+
+                    val mensagemErro = when(excepion){
+
+                        is FirebaseAuthWeakPasswordException -> "Digite uma senha de no minimo 6 caracteres"
+                        is FirebaseAuthInvalidCredentialsException -> "Digite um email valido"
+                        is FirebaseAuthUserCollisionException -> "Email ja Cadastrado"
+                        is FirebaseNetworkException -> "Sem conexão com a internet"
+                        else -> "Erro ao cadastrar usuario"
+
+
+                    }
+
+                    var snackbarErro = Snackbar.make(view, mensagemErro, Snackbar.LENGTH_SHORT)
+                    snackbarErro.setBackgroundTint( Color.RED )
+                    snackbarErro.show()
 
                 }
 
