@@ -29,9 +29,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    viewBinding{
+        enabled true
+    }
+
 }
 
     apply plugin: 'com.android.application'
+    apply plugin: 'com.google.gms.google-services'
 
 dependencies {
 
