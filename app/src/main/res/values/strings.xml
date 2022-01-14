@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Venda Produtos</string>
+    <string name="titulo_form_cadastro">Cadastre-se</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_senha">Senha</string>
+    <string name="cadastra_form">Cadastrar</string>
+    <string name="hint_nome">Nome</string>
+    <string name="usuario_cadastrado_form">Já sou cadastrado</string>
 </resources>

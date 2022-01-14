@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VendaProdutos">
         <activity
-            android:name=".MainActivity"
+            android:name=".view.formcadastro.FormCadastro"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
